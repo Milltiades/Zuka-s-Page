@@ -22,30 +22,41 @@ export default function MenuComponent({
     <MenuDiv>
       <Ul>
         <Li>
-          <Button
+          <Button className="btn"
             onClick={() => {
               navigate("/");
               dispatch(updateMenu(false))
             }}
           >
+            
             Home
+            <Img className="img" src="/assets/gantel.svg" alt="" />
           </Button>{" "}
         </Li>
         
         <Li>
-          <Button onClick={() => {
+          <Button className="btn" onClick={() => {
               navigate("gallery");
               dispatch(updateMenu(false))
               ;
-            }}>Gallery</Button>{" "}
+            }}>
+             
+              Gallery
+              <Img className="img" src="/assets/gantel.svg" alt="" />
+              </Button>{" "}
         </Li>
 
         <Li>
-          <Button onClick={() => {
+          <Button  className="btn" onClick={() => {
               navigate("movies");
               dispatch(updateMenu(false))
               ;
-            }}>Tournaments</Button>{" "}
+            }}>
+              
+              Tournaments
+              <Img className="img" src="/assets/gantel.svg" alt="" />
+              </Button>{" "}
+              
         </Li>
         
       </Ul>
@@ -53,16 +64,25 @@ export default function MenuComponent({
   );
 }
 
+const Img = styled.img`
+display: none;
+  width: 40px;
+  height: 40px;
+  :hover{
+display: flex;
+  }
+`
+
 const MenuDiv = styled.div`
   width: 100%;
   height: calc(100vh - 88px);
   background: black;
   position: absolute;
-  top: 88px;
+  top: 60px;
 `;
 
 const Li = styled.li`
-  margin-top: 15px;
+  margin-top: 15px;overflow: hidden;
 `;
 
 const Ul = styled.ul`
@@ -72,6 +92,9 @@ const Ul = styled.ul`
 `;
 
 const Button = styled.button`
+
+width: 100%;
+overflow: hidden;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -79,7 +102,12 @@ const Button = styled.button`
   color: white;
   list-style: none;
   font-size: 35px;
-  :hover {
-    opacity: 0.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  :hover .img {
+    display: flex;
   }
 `;
