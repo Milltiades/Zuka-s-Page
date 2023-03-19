@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { updateMenu } from "../store/nameSlice";
+import AudioPlayer from "./MusicComponent";
 
 export default function HeaderComponent(
   {navigate, dispatch, name, refHome} : {navigate:any, dispatch: any , name : any , refHome : any}
@@ -16,6 +17,7 @@ export default function HeaderComponent(
         }}>
           <Img src="/assets/lifter.svg" alt="" />
         </ButtonLogo>
+        <AudioPlayer/>
         <ButtonNav onClick={() => {
           dispatch(updateMenu(!name))
           navigate(!name? "/menu" : "/")

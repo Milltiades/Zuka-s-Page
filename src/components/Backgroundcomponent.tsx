@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 
+
 export default function Backgroundcomponent({
   refHome,
   navigate,
@@ -42,7 +43,7 @@ export default function Backgroundcomponent({
       <DivLine>
         <DivLineH1>FUTURE WORLD CHAMPION!!! </DivLineH1>
       </DivLine>
-      
+     
 
     </>
   );
