@@ -26,13 +26,13 @@ const SwiperComponent = () => {
         <Img src="./assets/zuka.jpg" alt="zuka1" />
       </SwiperSlide>
       <SwiperSlide>
-        <Img src="./assets/zuka.jpg" alt="zuka2" />
+        <Img src="./assets/zuka2.jpg" alt="zuka2" />
       </SwiperSlide>
       <SwiperSlide>
-        <Img src="./assets/zuka.jpg" alt="zuka3" />
+        <Img src="./assets/zuka3.jpg" alt="zuka3" />
       </SwiperSlide>
       <SwiperSlide>
-        <Img src="./assets/zuka.jpg" alt="zuka4" />
+        <Img src="./assets/zuka2.jpg" alt="zuka4" />
       </SwiperSlide>
       
     </Swiper>

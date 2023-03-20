@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import Backgroundcomponent from './components/Backgroundcomponent'
 import FooterComponent from './components/FooterComponent'
-import GalleryComponent from './components/GalleryComponent'
 import GlobalStylesComponent from './components/GlobalStylesComponent'
 import HeaderComponent from './components/HeaderComponent'
 import MenuComponent from './components/MenuComponent'
@@ -26,9 +25,7 @@ console.log(name)
         <Route path='/' element={<Backgroundcomponent refHome={refHome} navigate={navigate} refAbout={refAbout}/>}/>
         <Route path='/movies' element={<MoviesComponent />}/>
         <Route path='/menu' element={<MenuComponent refHome={refHome} refAbout={refAbout} navigate={navigate} dispatch={dispatch}/>}/>
-        
       </Routes>
-
       <FooterComponent name={name}/>
       
 
