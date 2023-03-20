@@ -15,7 +15,7 @@ export default function FooterComponent({ name }: { name: any }) {
             </Contact>
             <Contact>
               <p>email :</p>
-              <ContactP>example@mail.ru</ContactP>
+              <ContactP>ika.jiqia622@gmail.com</ContactP>
             </Contact>
           </div>
           <SocMedia>
@@ -72,7 +72,7 @@ const Img = styled.img`
 const Contact = styled.div`
   display: fle;
   flex-direction: row;
-  width: 50%;
+  width: 60%;
   justify-content: space-between;
 `;
 const Footer = styled.div`

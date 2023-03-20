@@ -37,19 +37,6 @@ export default function MenuComponent({
             <Img className="img" src="/assets/gantel.svg" alt="" />
           </Button>{" "}
         </Li>
-        
-        <Li>
-        <Button className="btn"
-            onClick={() => {
-              setGeo(!geo)
-            }}
-          >
-            
-            {geo ? "ენა" : "Language"}
-            <Img className="img" src="/assets/gantel.svg" alt="" />
-          </Button>{" "}
-        </Li>
-
         <Li>
           <Button  className="btn" onClick={() => {
               navigate("movies");
@@ -62,12 +49,43 @@ export default function MenuComponent({
               </Button>{" "}
               
         </Li>
-        
+        <Li style={{color: "white", display: "flex", flexDirection: "row", fontSize:"35px", alignItems:"center", justifyContent:"space-between"}}>
+          {geo? "ენა ": "Language"}
+          <div style={{display: "flex", flexDirection:"row", alignItems:"flex-end"}}>
+          <LanDivGeorgia onClick={() => setGeo(true)}/>
+          <LanDivBritain onClick={() => setGeo(false)}/>
+          </div>
+          
+        </Li>
       </Ul>
     </MenuDiv>
   );
 }
 
+const LanDivGeorgia = styled.button`
+    width: 30px;
+  height: 30px;
+  background-image: url("/assets/georgia.png");
+  background-repeat:no-repeat;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+ border-radius: 50%;
+ margin-left: 25px;
+
+`
+const LanDivBritain = styled.button`
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/britain.png");
+  background-repeat:no-repeat;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+ border-radius: 50%;
+ margin-left: 15px;
+ 
+`
 const Img = styled.img`
 display: none;
   width: 40px;
@@ -86,7 +104,8 @@ const MenuDiv = styled.div`
 `;
 
 const Li = styled.li`
-  margin-top: 15px;overflow: hidden;
+  margin-top: 15px;
+  overflow: hidden;
 `;
 
 const Ul = styled.ul`

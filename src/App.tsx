@@ -17,7 +17,7 @@ const refAbout = useRef<any>('')
 const navigate = useNavigate()
 const name = useSelector( (store : any) => store.name.value)
 const dispatch = useDispatch();
-const [geo, setGeo] = useState<boolean>(false);
+const [geo, setGeo] = useState<boolean>(!false);
 console.log(name)
   return (
     <div className="App">
