@@ -9,41 +9,43 @@ export default function Backgroundcomponent({
   refHome,
   navigate,
   refAbout,
+  geo,
+  setGeo
 }: {
   refHome: any;
   navigate: any;
   refAbout: any;
+  geo : any;
+  setGeo : any
 }) {
   const refSuccess = useRef<any>();
   return (
     <>
       <Div />
       <Content >
-        <H1>Zuka Jiqia</H1>
-        <P>is a Georgian weightlifter with big and huge ambitions</P>
+        <H1>{geo? "ზუკა ჯიქია" :  "Zuka Jiqia"}</H1>
+        <P>{geo? "ქართველი მძლეოსანი უზარმაზარი ამბიციებით" : "is a Georgian weightlifter with big and huge ambitions"}</P>
         <Button
           onClick={() =>
             refSuccess.current.scrollIntoView({ behavior: "smooth" })
           }
         >
-          Get More
+          {geo? "გაიგე მეტი" :  "Get More"}
         </Button>
       </Content>
       
       <SuccessDiv ref={refSuccess}>
-        <SuccessH1>Success Stories</SuccessH1>
+        <SuccessH1>{geo? "წარამტების ისტორია" : "Success Stories"}</SuccessH1>
         
-        <SuccessP>Zuka is a future shining star in wheightlifting, from zugdidi,
-          Georgia. He is only 8 years old. Sportsman, who is eager and determined to
-          win!</SuccessP>
+        <SuccessP>{geo? "ზუკა ამომავალი ვარსკვლავია მძლეოსნობაში, ზუგდიდიან. ის მხოლოდ 8 წლისაა. სპორტსმენი რომელიც მხოლოდ მომართულია გამარჯვებისკენ"  : "Zuka is a future shining star in wheightlifting, from zugdidi, Georgia. He is only 8 years old. Sportsman, who is eager and determined to win!"  }</SuccessP>
         <Button onClick={() => navigate("movies")}>
-          Tournaments
+          {geo? "ტურნირები" :  "Tournaments"}
         </Button>
         
       </SuccessDiv>
       <SwiperComponent/>
       <DivLine>
-        <DivLineH1>FUTURE WORLD CHAMPION!!! </DivLineH1>
+        <DivLineH1> FUTURE WORLD CHAMPION!!! </DivLineH1>
       </DivLine>
      
 
@@ -85,9 +87,6 @@ const SecondButton = styled.button`
   :hover {
     background: #e75b62;
   }
-
-
-
 `;
 const SecondP = styled.p`
   
@@ -117,11 +116,9 @@ const BluredBackground = styled.div`
 `;
 const DivLineH1 = styled.h1`
   color: white;
-
   overflow: hidden;
  animation: marquee 10s linear infinite;
   overflow: hidden;
-
   @keyframes marquee {
     0% {
       transform: translateX(100%);
@@ -184,7 +181,6 @@ const Div = styled.div`
   height: 300px;
   background-position-x: 50%;
   overflow: hidden;
-
   @media (width > 1200px) {
     background-size: cover;
   }

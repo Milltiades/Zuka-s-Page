@@ -1,20 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function MoviesComponent() {
+export default function MoviesComponent(
+  {geo, setGeo} : {geo : any, setGeo : any}
+) {
   return (
     <Div>
       <Item>
-        <H1>Zugdidi 2023</H1>
+        <H1>{geo? "ზუგდიდი 2023" :  "Zugdidi 2023"}</H1>
         <P>
-        In the clean & jerk portion, completed a 44kg lift on his third attempt
+       {geo? "აკვრაში მესამე ცდაზე დააფიქსირა 44კგ" : "In the clean & jerk portion, completed a 44kg lift on his third attempt"}
         </P>
         <Video src="/assets/videos/akvra44kg.mp4" controls />
       </Item>
       <Item>
-        <H1>Zugdidi 2023</H1>
+        <H1>{geo? "ზუგდიდი 2023" :  "Zugdidi 2023"}</H1>
         <P>
-        In the clean snatch portion, completed a 35kg lift on his third attempt
+        {geo? "ატაცში მესამე ცდაზე დააფიქსირა 35კგ" : "In the clean snatch portion, completed a 35kg lift on his third attempt"}
         </P>
         <Video src="/assets/videos/atatsi35kg.mp4" controls />
       </Item>

@@ -7,13 +7,17 @@ export default function MenuComponent({
   refHome,
   navigate,
   dispatch,
-  refAbout
+  refAbout,
+  geo,
+  setGeo
  
 }: {
   refHome: any;
   navigate: any;
   dispatch: any;
   refAbout: any
+  geo : any;
+  setGeo : any
  
 }) {
 
@@ -29,12 +33,21 @@ export default function MenuComponent({
             }}
           >
             
-            Home
+            {geo ? "მთავარი" : "Home"} 
             <Img className="img" src="/assets/gantel.svg" alt="" />
           </Button>{" "}
         </Li>
         
         <Li>
+        <Button className="btn"
+            onClick={() => {
+              setGeo(!geo)
+            }}
+          >
+            
+            {geo ? "ენა" : "Language"}
+            <Img className="img" src="/assets/gantel.svg" alt="" />
+          </Button>{" "}
         </Li>
 
         <Li>
@@ -44,7 +57,7 @@ export default function MenuComponent({
               ;
             }}>
               
-              Tournaments
+              {geo? "ტურნირები ": "Tournaments"}
               <Img className="img" src="/assets/gantel.svg" alt="" />
               </Button>{" "}
               
@@ -83,7 +96,6 @@ const Ul = styled.ul`
 `;
 
 const Button = styled.button`
-
 width: 100%;
 overflow: hidden;
   border: none;
