@@ -35,15 +35,6 @@ export default function MenuComponent({
         </Li>
         
         <Li>
-          <Button className="btn" onClick={() => {
-              navigate("gallery");
-              dispatch(updateMenu(false))
-              ;
-            }}>
-             
-              Gallery
-              <Img className="img" src="/assets/gantel.svg" alt="" />
-              </Button>{" "}
         </Li>
 
         <Li>

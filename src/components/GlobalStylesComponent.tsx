@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
   padding: 0;
   font-family: 'Teko', sans-serif;
- overflow-x: hidden;
+ /* overflow-x: hidden; */
   box-sizing: border-box;
 }
 
@@ -30,4 +30,32 @@ body {
   min-height: 100vh;
 }
 
+.swiper-wrapper {
+  width: 100vw;
+}
+
+.swiper  {
+  width: 100vw;
+ 
+ 
+}
+.swiper-initialized{
+  width: 100vw;
+}
+
+.swiper-horizontal{
+  width: 100vw;
+}
+
+.swiper-backface-hidden{
+  width: 100vw;
+}
+
+.swiper-slide{
+height: 210px;
+}
+img {
+  width: 100vw;
+}
 `
+

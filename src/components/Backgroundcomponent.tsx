@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import SwiperComponent from "./SwiperComponent";
 
 
 
@@ -38,8 +39,9 @@ export default function Backgroundcomponent({
         <Button onClick={() => navigate("movies")}>
           Tournaments
         </Button>
-        <Button onClick={() => navigate("gallery")}>Gallery</Button>
+        
       </SuccessDiv>
+      <SwiperComponent/>
       <DivLine>
         <DivLineH1>FUTURE WORLD CHAMPION!!! </DivLineH1>
       </DivLine>
@@ -51,8 +53,8 @@ export default function Backgroundcomponent({
 
 const SuccessP = styled.p`
   color: white;
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 25px;
+  line-height: 30px;
   overflow: hidden;
  margin-top: 30px;
 `
@@ -146,8 +148,8 @@ border-radius: 30px 0 30px 0;
   border: none;
   background: #e80711;
   color: white;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -162,15 +164,15 @@ border-radius: 30px 0 30px 0;
 
 const P = styled.p`
   color: black;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 25px;
+  line-height: 30px;
   overflow: hidden;
 `;
 
 const H1 = styled.h1`
   color: #e80711;
-  font-size: 80px;
-  line-height: 100px;
+  font-size: 60px;
+  line-height: 70px;
   overflow: hidden;
 `;
 

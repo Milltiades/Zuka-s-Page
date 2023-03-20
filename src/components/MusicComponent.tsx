@@ -1,10 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false); // Add a state variable for playing
+  const [isPlaying, setIsPlaying] = useState(false); 
+  const [isRandom, setIsRandom] = useState(true); 
 
+ 
+ 
   const handlePlayToggle = () => {
     const audioEl = audioRef.current;
     if (audioEl) {
@@ -18,14 +21,16 @@ const AudioPlayer = () => {
     }
   };
 
+
+
   return (
     <Div>
-      <audio ref={audioRef}>
+      <audio ref={audioRef} >
       <source src="/assets/music/stronger.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       Music <Button color={isPlaying ? "red" : "green"} onClick={handlePlayToggle}>
-        {isPlaying ? 'Stop' : 'Play'} {/* Display the appropriate label */}
+        {isPlaying ? 'Stop' : 'Play'} 
       </Button>
     </Div>
   );

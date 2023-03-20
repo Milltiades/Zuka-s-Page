@@ -19,17 +19,19 @@ const name = useSelector( (store : any) => store.name.value)
 const dispatch = useDispatch()
 console.log(name)
   return (
-    <div className="App">
+    <div className="App" style={{overflowX: "hidden"}}>
       <GlobalStylesComponent/>
       <HeaderComponent name={name} dispatch={dispatch} navigate={navigate} refHome={refHome}/>
       <Routes>
         <Route path='/' element={<Backgroundcomponent refHome={refHome} navigate={navigate} refAbout={refAbout}/>}/>
         <Route path='/movies' element={<MoviesComponent />}/>
         <Route path='/menu' element={<MenuComponent refHome={refHome} refAbout={refAbout} navigate={navigate} dispatch={dispatch}/>}/>
-        <Route path='/gallery' element={<GalleryComponent />}/>
+        
       </Routes>
 
       <FooterComponent name={name}/>
+      
+
       
       
     </div>

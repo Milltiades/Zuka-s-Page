@@ -1,22 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import SwiperComponent from "./SwiperComponent";
 
 export default function GalleryComponent(
     
 ) {
   return (
     
-    <Div >
-      <Img src="/assets/zuka3.jpg" alt="" />
-      <Img src="/assets/zuka3.jpg" alt="" />
-      <Img src="/assets/zuka3.jpg" alt="" />
-      <Img src="/assets/zuka3.jpg" alt="" />
-      <Img src="/assets/zuka3.jpg" alt="" />
+   
+      <SwiperComponent/>
 
 
         
       
-    </Div>
+   
     
   );
 }
