@@ -213,7 +213,7 @@ const Content = styled.div`
   overflow: hidden;
   @media (width > 1200px){
     width: 50vw;
-    margin-top: 230px;
+    margin-top: 23vh;
     padding: 0 165px 0 100px;
   }
 `;
