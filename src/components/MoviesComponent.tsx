@@ -28,6 +28,9 @@ export default function MoviesComponent(
 const P = styled.p`
    color: white; 
    font-size: 20px;
+   @media (width > 1200px) {
+    margin-top: 20px;
+   }
 `
 const H1 = styled.h1`
   color: white;
@@ -35,15 +38,31 @@ const H1 = styled.h1`
 const Div = styled.div`
   padding: 88px 48px;
   background: #202123;
+  @media (width > 1200px) {
+    padding: 88px 160px;
+    display: flex;
+    flex-direction: row;
+  }
 `;
 const Item = styled.div`
   width: 100%;
   margin-top: 24px;
+  @media (width > 1200px) {
+    
+    height: 60vh;
+    justify-content: center;
+  }
 `;
 
 const Video = styled.video`
   margin-top: 15px;
   width: 100%;
   height: 250px;
+  @media (width > 1200px){
+height: 50vh;
+width: 70%;
+    margin-top: 60px;
+  
+  }
   
 `;

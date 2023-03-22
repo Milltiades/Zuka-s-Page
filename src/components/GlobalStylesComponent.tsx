@@ -31,31 +31,39 @@ body {
 }
 
 .swiper-wrapper {
-  width: 100vw;
+  width: 100vw; 
 }
 
 .swiper  {
-  width: 100vw;
+  width: 100vw; 
  
  
 }
 .swiper-initialized{
-  width: 100vw;
+  width: 100vw; 
 }
 
 .swiper-horizontal{
   width: 100vw;
+  
 }
 
 .swiper-backface-hidden{
   width: 100vw;
+  @media (width > 1200px) {
+    width: 100%
+  }
+ 
 }
 
 .swiper-slide{
 height: 210px;
+@media (width > 1200px){
+height: 800px;
+}
 }
 img {
-  width: 100vw;
+  width: 100%;
 }
 `
 

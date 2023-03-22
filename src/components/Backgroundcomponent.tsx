@@ -21,6 +21,7 @@ export default function Backgroundcomponent({
   const refSuccess = useRef<any>();
   return (
     <>
+    <DivMain1>
       <Div />
       <Content >
         <H1>{geo? "ზუკა ჯიქია" :  "Zuka Jiqia"}</H1>
@@ -33,6 +34,7 @@ export default function Backgroundcomponent({
           {geo? "გაიგე მეტი" :  "Get More"}
         </Button>
       </Content>
+      </DivMain1>
       
       <SuccessDiv ref={refSuccess}>
         <SuccessH1>{geo? "წარამტების ისტორია" : "Success Stories"}</SuccessH1>
@@ -53,6 +55,12 @@ export default function Backgroundcomponent({
   );
 }
 
+const DivMain1 = styled.div`
+  @media (width > 1200px) {
+    display: flex;
+    flex-direction: row;
+  }
+`
 const SuccessP = styled.p`
   color: white;
   font-size: 25px;
@@ -66,6 +74,10 @@ const SuccessDiv = styled.div`
   color: white;
   padding: 30px 24px;
   margin-top: 140px;
+  @media (width > 1200px) {
+    margin-top: 0;
+    padding: 60px 160px;
+  }
 `;
 const SuccessH1 = styled.h1``;
 const SecondButton = styled.button`
@@ -183,6 +195,10 @@ const Div = styled.div`
   overflow: hidden;
   @media (width > 1200px) {
     background-size: cover;
+    width: 50vw;
+    height: 70vh;
+
+
   }
 `;
 
@@ -192,4 +208,9 @@ const Content = styled.div`
   padding: 0 24px 0;
   height: auto;
   overflow: hidden;
+  @media (width > 1200px){
+    width: 50vw;
+    margin-top: 230px;
+    padding: 0 165px 0 100px;
+  }
 `;

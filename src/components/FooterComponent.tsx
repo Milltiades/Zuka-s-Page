@@ -7,14 +7,14 @@ export default function FooterComponent({ name }: { name: any }) {
     <Footer>
       {!name ? (
         <div>
-          <h1>Zuka Jiqia</h1>
+          <FooterH1>Zuka Jiqia</FooterH1>
           <div>
             <Contact>
-              <p>phone :</p>
+              <PP>phone :</PP>
               <ContactP>+995 591 963 676</ContactP>
             </Contact>
             <Contact>
-              <p>email :</p>
+              <PP>email :</PP>
               <ContactP>ika.jiqia622@gmail.com</ContactP>
             </Contact>
           </div>
@@ -32,6 +32,16 @@ export default function FooterComponent({ name }: { name: any }) {
   );
 }
 
+const FooterH1 = styled.h1`
+  @media (width > 1200px){
+    font-size: 60px;
+  }
+`
+const PP = styled.p`
+  @media (width > 1200px) {
+    font-size: 30px;
+  }
+`
 
 const ContactP = styled.p`
   cursor: pointer;
@@ -39,9 +49,15 @@ const ContactP = styled.p`
   :hover {
     color: yellow;
   }
+   @media (width > 1200px) {
+    font-size: 30px;
+  }
 `;
 const P = styled.p`
   margin-top: 44px;
+  @media (width > 1200px) {
+    font-size: 20px;
+  }
 `;
 const Line = styled.div`
   width: 100%;
@@ -70,10 +86,13 @@ const Img = styled.img`
   height: 20px;
 `;
 const Contact = styled.div`
-  display: fle;
+  display: flex;
   flex-direction: row;
   width: 60%;
   justify-content: space-between;
+  @media (width > 1200px) {
+    width: 25%;
+  }
 `;
 const Footer = styled.div`
   background: black;
@@ -81,6 +100,9 @@ const Footer = styled.div`
   padding: 30px 24px;
   display: flex;
   flex-direction: column;
+  @media (width > 1200px){
+    padding: 60px 160px;
+  }
 `;
 
 const SocMedia = styled.div``;

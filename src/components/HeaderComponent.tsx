@@ -5,38 +5,144 @@ import styled from "styled-components";
 import { updateMenu } from "../store/nameSlice";
 import AudioPlayer from "./MusicComponent";
 
-export default function HeaderComponent(
-  {navigate, dispatch, name, refHome} : {navigate:any, dispatch: any , name : any , refHome : any}
-) {
+export default function HeaderComponent({
+  navigate,
+  dispatch,
+  name,
+  refHome,
+  geo,
+  setGeo
+}: {
+  navigate: any;
+  dispatch: any;
+  name: any;
+  refHome: any;
+  geo : any;
+  setGeo : any
+}) {
   return (
-    <div style={{background: "white"}}>
+    <div style={{ background: "white" }}>
       <Header>
-        <ButtonLogo  onClick={() => {
-          navigate('/')
-          dispatch(updateMenu(false))
-        }}>
+        <ButtonLogo
+          onClick={() => {
+            navigate("/");
+            dispatch(updateMenu(false));
+          }}
+        >
           <Img src="/assets/lifter.svg" alt="" />
         </ButtonLogo>
-        <AudioPlayer/>
-        <ButtonNav onClick={() => {
-          dispatch(updateMenu(!name))
-          navigate(!name? "/menu" : "/")
-          }}>
+        <AudioPlayer />
+        <ButtonNav
+          display={window.innerWidth > 1199 ? "none" : "flex"}
+          onClick={() => {
+            dispatch(updateMenu(!name));
+            navigate(!name ? "/menu" : "/");
+          }}
+        >
           {!name ? (
             <Icon src="/assets/menu.svg" alt="" />
           ) : (
             <Icon src="/assets/x.svg" alt="" />
           )}
         </ButtonNav>
+        <MenuBar display={window.innerWidth > 1199 ? "flex" : "none"}>
+          <Ul>
+            <Li>
+              <Button
+                className="btn"
+                onClick={() => {
+                  navigate("/");
+                  dispatch(updateMenu(false));
+                }}
+              >
+                {geo ? "მთავარი" : "Home"}
+                
+              </Button>{" "}
+            </Li>
+            <Li>
+              <Button
+                className="btn"
+                onClick={() => {
+                  navigate("movies");
+                  dispatch(updateMenu(false));
+                }}
+              >
+                {geo ? "ტურნირები " : "Tournaments"}
+                
+              </Button>{" "}
+            </Li>
+            <Li
+             
+            >
+              
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "flex-end",
+                }}
+              >
+                <LanDivGeorgia onClick={() => setGeo(true)} />
+                <LanDivBritain onClick={() => setGeo(false)} />
+              </div>
+            </Li>
+          </Ul>
+        </MenuBar>
       </Header>
-      
     </div>
   );
 }
 
+
+const LanDivGeorgia = styled.button`
+    width: 30px;
+  height: 30px;
+  background-image: url("/assets/georgia.png");
+  background-repeat:no-repeat;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+ border-radius: 50%;
+ margin-left: 25px;
+
+`
+const LanDivBritain = styled.button`
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/britain.png");
+  background-repeat:no-repeat;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+ border-radius: 50%;
+ margin-left: 15px;
+ 
+`
+
+const Ul = styled.ul`
+display:flex;
+flex-direction: row;
+align-items: center;
+
+`
+const Li = styled.li`
+list-style:none;
+align-items: center;
+`;
+const Button = styled.button`
+border: none;
+background: transparent;
+margin-left: 25px;
+font-size: 30px;
+cursor: pointer;
+`;
+
+const MenuBar = styled.div<any>`
+  display: ${(props) => props.display};
+`;
 const Img = styled.img`
   width: 40px;
-`
+`;
 const Header = styled.div`
   position: fixed;
   width: 100%;
@@ -46,10 +152,13 @@ const Header = styled.div`
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
+  @media (width > 1200px) {
+    padding: 20px 160px;
+  }
 `;
 
 const ButtonLogo = styled.button`
-color: black;
+  color: black;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -63,7 +172,8 @@ color: black;
   align-items: center;
 `;
 
-const ButtonNav = styled.button`
+const ButtonNav = styled.button<any>`
+  display: ${(props) => props.display};
   border: none;
   background: transparent;
   cursor: pointer;

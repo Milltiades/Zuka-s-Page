@@ -22,7 +22,7 @@ console.log(name)
   return (
     <div className="App">
       <GlobalStylesComponent/>
-      <HeaderComponent name={name} dispatch={dispatch} navigate={navigate} refHome={refHome}/>
+      <HeaderComponent geo={geo} setGeo={setGeo} name={name} dispatch={dispatch} navigate={navigate} refHome={refHome}/>
       <Routes>
         <Route path='/' element={<Backgroundcomponent setGeo={setGeo} geo={geo}  refHome={refHome} navigate={navigate} refAbout={refAbout}/>}/>
         <Route path='/movies' element={<MoviesComponent setGeo={setGeo} geo={geo} />}/>
