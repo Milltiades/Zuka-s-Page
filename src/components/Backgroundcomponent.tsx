@@ -37,9 +37,9 @@ export default function Backgroundcomponent({
       </DivMain1>
       
       <SuccessDiv ref={refSuccess}>
-        <SuccessH1>{geo? "წარამტების ისტორია" : "Success Stories"}</SuccessH1>
+        <SuccessH1>{geo? "წარმატების ისტორია" : "Success Stories"}</SuccessH1>
         
-        <SuccessP>{geo? "ზუკა ამომავალი ვარსკვლავია მძლეოსნობაში, ზუგდიდიან. ის მხოლოდ 8 წლისაა. სპორტსმენი რომელიც მხოლოდ მომართულია გამარჯვებისკენ"  : "Zuka is a future shining star in wheightlifting, from zugdidi, Georgia. He is only 8 years old. Sportsman, who is eager and determined to win!"  }</SuccessP>
+        <SuccessP>{geo? "ზუკა ამომავალი ვარსკვლავია მძლეოსნობაში, ზუგდიდიდან. ის მხოლოდ 8 წლისაა. სპორტსმენი რომელიც მომართულია გამარჯვებისკენ"  : "Zuka is a future shining star in wheightlifting, from zugdidi, Georgia. He is only 8 years old. Sportsman, who is eager and determined to win!"  }</SuccessP>
         <Button onClick={() => navigate("movies")}>
           {geo? "ტურნირები" :  "Tournaments"}
         </Button>
@@ -168,6 +168,9 @@ border-radius: 30px 0 30px 0;
   overflow: hidden;
   :hover {
     background: #e75b62;
+  }
+  @media (width > 1200px){
+    margin-bottom: 140px;
   }
 `;
 

@@ -91,7 +91,7 @@ const Contact = styled.div`
   width: 60%;
   justify-content: space-between;
   @media (width > 1200px) {
-    width: 25%;
+    width: 35%;
   }
 `;
 const Footer = styled.div`
